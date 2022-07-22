@@ -198,14 +198,16 @@ func InitNetwork(
 	}
 
 	// Register the sequencer
-	log.Infof("Registering the sequencer")
 	ethermanConfig := etherman.Config{
 		URL: nc.L1NetworkURL,
 	}
+	log.Infof("making client")
 	etherman, err := etherman.NewClient(ethermanConfig, authSequencer, cfg.NetworkConfig.PoEAddr, cfg.NetworkConfig.MaticAddr)
 	if err != nil {
 		return err
 	}
+	log.Infof("registering sequencer")
+	log.Infof("L2NetworkURL: ", nc.L2NetworkURL)
 	tx, err := etherman.RegisterSequencer(nc.L2NetworkURL)
 	if err != nil {
 		return err

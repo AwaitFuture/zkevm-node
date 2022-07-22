@@ -12,8 +12,8 @@ func main() {
 	ctx := context.Background()
 	if err := NW.InitNetwork(ctx,
 		NW.InitNetworkConfig{
-			L1NetworkURL: "http://localhost:8545",
-			L2NetworkURL: "http://localhost:8123",
+			L1NetworkURL: "http://127.0.0.1:8545",
+			L2NetworkURL: "http://127.0.0.1:8123",
 			L1BridgeAddr: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
 			L2BridgeAddr: "0x9d98deabc42dd696deb9e40b4f1cab7ddbf55988",
 			L1Deployer: NW.L1Deployer{

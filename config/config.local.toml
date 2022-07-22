@@ -6,14 +6,14 @@ Outputs = ["stdout"]
 User = "test_user"
 Password = "test_password"
 Name = "test_db"
-Host = "hez-postgres"
+Host = "127.0.0.1"
 Port = "5432"
-EnableLog = false
+EnableLog = true
 MaxConns = 200
 
 [Etherman]
-URL = "http://hez-network:8545"
-PrivateKeyPath = "./test/test.keystore"
+URL = "http://localhost:8545"
+PrivateKeyPath = "/pk/keystore"
 PrivateKeyPassword = "testonly"
 
 [RPC]
@@ -34,7 +34,7 @@ SyncInterval = "1s"
 SyncChunkSize = 100
 
 [Sequencer]
-AllowNonRegistered = "false"
+AllowNonRegistered = "true"
 IntervalToProposeBatch = "5s"
 SyncedBlockDif = 1
 InitBatchProcessorIfDiffType = "synced"
@@ -65,21 +65,21 @@ TxProfitabilityCheckerType = "acceptall"
 TxProfitabilityMinReward = "1.1"
 
 [Prover]
-ProverURI = "hez-prover:50051"
+ProverURI = "zkevm-prover:50051"
 
 [MTServer]
-Host = "0.0.0.0"
-Port = 50060
+Host = "zkevm-prover"
+Port = 50061
 StoreBackend = "PostgreSQL"
 
 [MTClient]
-URI  = "127.0.0.1:50060"
+URI  = "zkevm-prover:50061"
 
 [Executor]
-URI = "51.210.116.237:50071"
+URI = "zkevm-prover:50071"
 
 [BroadcastServer]
-Host = "0.0.0.0"
+Host = "127.0.0.1"
 Port = 61090
 
 [BroadcastClient]

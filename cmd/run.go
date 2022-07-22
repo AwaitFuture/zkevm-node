@@ -174,6 +174,9 @@ func newEtherman(c config.Config) (*etherman.Client, error) {
 	if err != nil {
 		return nil, err
 	}
+	log.Infof("auth: ", auth)
+	log.Infof("c.NetworkConfig.PoEAddr: ", c.NetworkConfig.PoEAddr)
+	log.Infof("c.NetworkConfig.MaticAddr: ", c.NetworkConfig.MaticAddr)
 	etherman, err := etherman.NewClient(c.Etherman, auth, c.NetworkConfig.PoEAddr, c.NetworkConfig.MaticAddr)
 	if err != nil {
 		return nil, err
